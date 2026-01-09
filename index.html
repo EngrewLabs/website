@@ -4,11 +4,12 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Engrew Labs</title>
-  <meta name="description" content="Engrew Labs builds web, blockchain, and AI products—shipping practical solutions from idea to production." />
+  <meta name="description" content="Engrew Labs builds blockchain, AI, and web products—shipping sustainable systems from idea to production." />
   <meta property="og:title" content="Engrew Labs" />
-  <meta property="og:description" content="Web • Blockchain • AI — practical products, built to ship." />
+  <meta property="og:description" content="Blockchain • AI • Web — practical products, built to last." />
   <meta property="og:image" content="assets/logo.png" />
   <link rel="icon" href="assets/logo.png" />
+
   <style>
     :root{
       --bg: #0b1020;
@@ -19,6 +20,9 @@
       --shadow: 0 18px 60px rgba(0,0,0,.45);
       --radius: 18px;
       --max: 1120px;
+      --good: rgba(88,255,205,.9);
+      --blue: rgba(71,126,255,.95);
+      --violet: rgba(167,88,255,.85);
     }
     *{box-sizing:border-box}
     html,body{height:100%}
@@ -26,11 +30,7 @@
       margin:0;
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
       color:var(--text);
-      background:
-        radial-gradient(900px 500px at 20% 10%, rgba(88, 255, 205, .16), transparent 60%),
-        radial-gradient(900px 500px at 80% 0%, rgba(71, 126, 255, .18), transparent 55%),
-        radial-gradient(900px 700px at 50% 100%, rgba(167, 88, 255, .10), transparent 55%),
-        var(--bg);
+      background: var(--bg);
       line-height:1.55;
     }
     a{color:inherit; text-decoration:none}
@@ -54,7 +54,7 @@
     .brand .name{display:flex; flex-direction:column; line-height:1.1;}
     .brand .name strong{font-size:14px; letter-spacing:.2px}
     .brand .name span{font-size:12px; color:var(--muted)}
-    nav ul{display:flex; list-style:none; margin:0; padding:0; gap: 10px; flex-wrap:wrap; justify-content:flex-end;}
+    nav ul{display:flex; list-style:none; margin:0; padding:0; gap: 8px; flex-wrap:wrap; justify-content:flex-end;}
     nav a{font-size:13px; color:var(--muted); padding:8px 10px; border-radius:12px;}
     nav a:hover{color:var(--text); background: rgba(255,255,255,.06);}
     .cta{display:flex; gap:10px; align-items:center;}
@@ -65,7 +65,7 @@
       background: rgba(255,255,255,.06);
       color: var(--text);
       font-weight:600; font-size:13px;
-      transition: transform .12s ease, background .12s ease, border-color .12s ease;
+      transition: transform .12s ease, background .12s ease, border-color .12s ease, filter .12s ease;
       white-space:nowrap;
     }
     .btn:hover{transform: translateY(-1px); background: rgba(255,255,255,.09); border-color: rgba(255,255,255,.22);}
@@ -75,7 +75,7 @@
       color: #071022;
     }
     .btn.primary:hover{filter: brightness(1.03);}
-    .hero{padding: 72px 0 36px;}
+    .hero{padding: 72px 0 34px;}
     .heroGrid{
       display:grid;
       grid-template-columns: 1.15fr .85fr;
@@ -109,7 +109,7 @@
       margin: 0 0 18px;
       color: var(--muted);
       font-size: 15px;
-      max-width: 62ch;
+      max-width: 70ch;
     }
     .heroActions{display:flex; gap:10px; flex-wrap:wrap; margin-top:18px;}
     .stats{
@@ -148,6 +148,19 @@
       border: 1px solid rgba(255,255,255,.12);
       background: rgba(255,255,255,.05);
     }
+    .badgeRow{display:flex; flex-wrap:wrap; gap:8px; margin-top: 10px;}
+    .badge{
+      font-size:11px;
+      padding: 6px 9px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.05);
+      color: var(--muted);
+    }
+    .badge.core{border-color: rgba(88,255,205,.35); color: rgba(205,255,240,.95);}
+    .badge.progress{border-color: rgba(71,126,255,.35); color: rgba(210,225,255,.95);}
+    .badge.investor{border-color: rgba(167,88,255,.35); color: rgba(235,215,255,.95);}
+
     section{padding: 34px 0;}
     .sectionTitle{
       display:flex; align-items:flex-end; justify-content:space-between; gap:14px;
@@ -158,6 +171,11 @@
     .grid3{
       display:grid;
       grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+    .grid2{
+      display:grid;
+      grid-template-columns: repeat(2, 1fr);
       gap: 14px;
     }
     .card{
@@ -173,6 +191,19 @@
     }
     .list{margin: 8px 0 0; padding-left: 18px; color:var(--muted); font-size:13px;}
     .list li{margin: 6px 0;}
+    .meta{
+      display:flex; gap:10px; flex-wrap:wrap;
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+    .meta span{
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+      padding: 6px 9px;
+      border-radius: 999px;
+    }
+
     .contact{
       display:flex; align-items:center; justify-content:space-between; gap: 14px;
       padding: 18px;
@@ -184,31 +215,36 @@
       border-top: 1px solid rgba(255,255,255,.08);
       margin-top: 10px;
     }
-    /* responsive */
+
     @media (max-width: 900px){
       .heroGrid{grid-template-columns: 1fr;}
       .grid3{grid-template-columns: 1fr;}
+      .grid2{grid-template-columns: 1fr;}
       .split{grid-template-columns: 1fr;}
       .brand{min-width:unset}
       nav{display:none}
     }
   </style>
 </head>
+
 <body>
   <header>
     <div class="wrap">
       <div class="nav">
         <a class="brand" href="#top" aria-label="Engrew Labs Home">
-          <img src="assets/logo.png" alt="Engrew Labs Logo" />
+          <img src="assets/smallLogo2.jpeg" alt="Engrew Labs Logo" />
           <div class="name">
             <strong>Engrew Labs</strong>
-            <span>Web • Blockchain • AI</span>
+            <span>Blockchain • AI • Web</span>
           </div>
         </a>
 
         <nav aria-label="Primary">
           <ul>
-            <li><a href="#work">What we build</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#team">Team</a></li>
+            <li><a href="#stack">Stack</a></li>
             <li><a href="#services">Services</a></li>
             <li><a href="#approach">Approach</a></li>
             <li><a href="#contact">Contact</a></li>
@@ -217,41 +253,42 @@
 
         <div class="cta">
           <a class="btn" href="#contact">Talk to us</a>
-          <a class="btn primary" href="#work">See focus</a>
+          <a class="btn primary" href="#products">See products</a>
         </div>
       </div>
     </div>
   </header>
 
   <main id="top">
+    <!-- HERO -->
     <section class="hero">
       <div class="wrap">
         <div class="heroGrid">
           <div class="panel heroCard">
-            <div class="kicker">⚙️ Practical engineering, shipped fast</div>
-            <h1>Engrew Labs builds real products that scale.</h1>
+            <div class="kicker">⚙️ Built for the long run</div>
+            <h1>We build sustainable products that ship.</h1>
             <p class="lead">
-              We design and deliver web platforms, blockchain systems, and AI-powered solutions—from prototype to production.
-              Built for reliability, security, and measurable impact.
+              Engrew Labs is a cross-functional team delivering blockchain infrastructure, smart contracts, AI agents,
+              and full-stack products—designed to scale, secured for production, and improved with AI-driven workflows.
             </p>
 
             <div class="heroActions">
               <a class="btn primary" href="#contact">Start a project</a>
-              <a class="btn" href="#services">Explore services</a>
+              <a class="btn" href="#team">Meet the team</a>
             </div>
 
             <div class="stats" aria-label="Highlights">
               <div class="stat">
-                <strong>Web</strong>
-                <span>Modern frontends + robust backends</span>
+                <strong>Balanced Team Composition</strong>
+                <span>Experienced leads, proven mid-level engineers, and continuously learning juniors</span>
               </div>
               <div class="stat">
-                <strong>Blockchain</strong>
-                <span>Smart contracts, infra, integrations</span>
+                <strong>End-to-end</strong>
+                <span>Build, ship, operate, grow</span>
               </div>
               <div class="stat">
-                <strong>AI</strong>
-                <span>Agents, automation, workflows</span>
+                <strong>AI-enabled</strong>
+                <span>Automation to move faster</span>
               </div>
             </div>
           </div>
@@ -260,6 +297,7 @@
             <div class="logoBox">
               <img src="assets/logo.png" alt="Engrew Labs logo" />
             </div>
+
             <div>
               <div class="pillRow" aria-label="Keywords">
                 <div class="pill">Ship</div>
@@ -269,7 +307,7 @@
                 <div class="pill">Production-first</div>
               </div>
               <p class="sub" style="margin-top:12px;">
-                Brand note: clean, modern, calm—built to grow with multiple teams and products.
+                We combine engineering, design, DevOps, and growth to deliver complete products—not just code.
               </p>
             </div>
           </div>
@@ -277,38 +315,264 @@
       </div>
     </section>
 
-    <section id="work">
+    <!-- PRODUCTS -->
+    <section id="products">
       <div class="wrap">
         <div class="sectionTitle">
           <div>
-            <h2>What we build</h2>
-            <p class="sub">End-to-end delivery for products and internal platforms.</p>
+            <h2>Products</h2>
+            <p class="sub">Core products + in-progress initiatives currently being shaped for launch and investment.</p>
           </div>
         </div>
 
-        <div class="grid3">
+        <div class="grid2">
           <div class="card">
-            <h3>Web platforms</h3>
-            <p>Dashboards, SaaS, marketplaces, admin panels, API services, and data pipelines.</p>
+            <h3>YAR — Mental Healthcare AI Agent</h3>
+            <p>
+              A supportive AI agent for sharing personal situations, reducing stress, and helping users work through
+              problems in a private, conversational flow.
+            </p>
+            <div class="badgeRow">
+              <span class="badge core">Core product</span>
+              <span class="badge">AI agent</span>
+              <span class="badge">Wellbeing</span>
+            </div>
+            <div class="meta">
+              <span>Focus: Safety + empathy</span>
+              <span>Output: Guidance + reflection</span>
+            </div>
           </div>
+
           <div class="card">
-            <h3>Blockchain systems</h3>
-            <p>Smart contracts, protocol integrations, wallets, indexing, and secure transaction flows.</p>
+            <h3>MindClash — AI Society</h3>
+            <p>
+              A research-driven “AI society” to test whether agents can form relationships, collaborate,
+              and evolve coordination like humans—positioned for investor storytelling before full build-out.
+            </p>
+            <div class="badgeRow">
+              <span class="badge progress">In progress</span>
+              <span class="badge investor">Investor-ready concept</span>
+              <span class="badge">Multi-agent</span>
+            </div>
+            <div class="meta">
+              <span>Goal: agent-to-agent collaboration</span>
+              <span>Next: pitch narrative + prototype</span>
+            </div>
           </div>
+
           <div class="card">
-            <h3>AI automation</h3>
-            <p>Agents, RAG/search, workflow automation, and integrations to reduce manual operations.</p>
+            <h3>HyperUI — Hyperliquid Trading Interface</h3>
+            <p>
+              A one-page interface that aggregates essential Hyperliquid trading signals, positions, and market data—
+              optimized for speed and clarity.
+            </p>
+            <div class="badgeRow">
+              <span class="badge core">Core product</span>
+              <span class="badge">Trading UI</span>
+              <span class="badge">Hyperliquid</span>
+            </div>
+            <div class="meta">
+              <span>Purpose: “Everything in one view”</span>
+              <span>Design: fast, minimal, responsive</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>OpenBroker Protocol</h3>
+            <p>
+              On-chain intent + off-chain (or cross-chain) execution by service providers (“brokers”).
+              First broker: a Binance broker to execute Binance trading using on-chain intent.
+            </p>
+            <div class="badgeRow">
+              <span class="badge core">Core product</span>
+              <span class="badge">Intent protocol</span>
+              <span class="badge">Broker network</span>
+            </div>
+            <div class="meta">
+              <span>Pattern: on-chain request → executed service</span>
+              <span>First integration: Binance broker</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>Engrew Development Agency</h3>
+            <p>
+              A long-running delivery engine to source projects and ship them with experienced teams across blockchain,
+              AI, and full-stack engineering—built to stay valuable regardless of job market cycles.
+            </p>
+            <div class="badgeRow">
+              <span class="badge core">Core product</span>
+              <span class="badge">Delivery</span>
+              <span class="badge">Long-term</span>
+            </div>
+            <div class="meta">
+              <span>Model: build + deliver + maintain</span>
+              <span>Teams: engineering + design + growth</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>More in progress</h3>
+            <p>
+              We continuously explore new product lines and partnerships. If you’re an investor or partner,
+              we can share a private roadmap and demo links under NDA.
+            </p>
+            <div class="badgeRow">
+              <span class="badge progress">In progress</span>
+              <span class="badge">Partnerships</span>
+              <span class="badge">Roadmap</span>
+            </div>
+            <div class="meta">
+              <span>Request: pitch + demo access</span>
+              <span>Contact: below</span>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- PORTFOLIO -->
+    <section id="portfolio">
+      <div class="wrap">
+        <div class="sectionTitle">
+          <div>
+            <h2>Portfolio</h2>
+            <p class="sub">Examples of what we deliver (replace placeholders with real client links/screenshots).</p>
+          </div>
+          <div class="pillRow">
+            <div class="pill">MVP → v1</div>
+            <div class="pill">Protocol + UI</div>
+            <div class="pill">Infra + DevOps</div>
+          </div>
+        </div>
+
+        <div class="grid3">
+          <div class="card">
+            <h3>DeFi dashboard + indexer</h3>
+            <p>Fast UI + backend indexer for positions, yields, and alerts across multiple chains.</p>
+            <div class="meta">
+              <span>Next.js</span><span>Node/Go</span><span>Indexing</span>
+            </div>
+          </div>
+          <div class="card">
+            <h3>Smart contracts + audits readiness</h3>
+            <p>Contract system design, testing, and deployment pipelines with security-first practices.</p>
+            <div class="meta">
+              <span>Solidity</span><span>Foundry/Hardhat</span><span>Security</span>
+            </div>
+          </div>
+          <div class="card">
+            <h3>AI agent for ops automation</h3>
+            <p>LLM workflow to reduce manual work: support triage, reporting, and internal knowledge retrieval.</p>
+            <div class="meta">
+              <span>Python</span><span>RAG</span><span>Automation</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TEAM -->
+    <section id="team">
+      <div class="wrap">
+        <div class="sectionTitle">
+          <div>
+            <h2>Team</h2>
+            <p class="sub">Senior engineering leadership supported by established mid-level professionals and junior engineers in structured development..</p>
+          </div>
+        </div>
+
+        <div class="split">
+          <div class="card">
+            <h3>How we’re structured</h3>
+            <ul class="list">
+              <li><strong>Product management</strong> defines product vision, roadmap, requirements, and delivery priorities.</li>
+              <li><strong>Senior leaders</strong> set architecture, security posture, and delivery standards.</li>
+              <li><strong>Mid-level engineers</strong> own core features, integrations, and day-to-day execution.</li>
+              <li><strong>Junior engineers</strong> contribute under structured mentorship and continuous technical training.</li>
+              <li><strong>Design team</strong> drives user experience, interface consistency, and product usability.</li>
+              <li><strong>DevOps team</strong> ensures infrastructure reliability, scalability, CI/CD, and production stability.</li>
+              <li><strong>Quality assurance</strong> enforces testing standards, regression coverage, and release confidence.</li>
+              <li><strong>Security & compliance</strong> oversee audits, risk management, and regulatory alignment.</li>
+              <li><strong>Marketing & partnerships</strong> drive distribution, growth, and ecosystem relationships.</li>
+              <li><strong>Customer success</strong> supports onboarding, feedback loops, and long-term adoption.</li>
+              <li><strong>AI-driven tooling</strong> accelerates planning, development, testing, and operational efficiency.</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>Capabilities</h3>
+            <div class="grid2" style="margin-top:10px;">
+              <div class="card" style="padding:12px;">
+                <h3 style="margin:0 0 6px;">Blockchain core</h3>
+                <p>Substrate, Cosmos SDK, node infra, consensus-aware integrations.</p>
+              </div>
+              <div class="card" style="padding:12px;">
+                <h3 style="margin:0 0 6px;">Smart contracts</h3>
+                <p>EVM + non-EVM, tokenomics, audits readiness, secure patterns.</p>
+              </div>
+              <div class="card" style="padding:12px;">
+                <h3 style="margin:0 0 6px;">Full stack</h3>
+                <p>Production web apps, dashboards, APIs, auth, payments, analytics.</p>
+              </div>
+              <div class="card" style="padding:12px;">
+                <h3 style="margin:0 0 6px;">DevOps</h3>
+                <p>CI/CD pipelines, infrastructure automation, monitoring, and production-grade deployments.</p>
+              </div>
+
+              <div class="card" style="padding:12px;">
+                <h3 style="margin:0 0 6px;">Design</h3>
+                <p>User experience, interface consistency, and clean, modern product design.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STACK -->
+    <section id="stack">
+      <div class="wrap">
+        <div class="sectionTitle">
+          <div>
+            <h2>Stack</h2>
+            <p class="sub">We build across Go/Rust/Python/JS/Solidity and both EVM + non-EVM ecosystems.</p>
+          </div>
+        </div>
+
+        <div class="grid3">
+          <div class="card">
+            <h3>Languages</h3>
+            <p>Go • Rust • Python • JavaScript/TypeScript • Solidity</p>
+            <div class="meta">
+              <span>Backend</span><span>Frontend</span><span>Contracts</span>
+            </div>
+          </div>
+          <div class="card">
+            <h3>Chains</h3>
+            <p>EVM + non-EVM. Protocol builds, integrations, wallets, indexers, and tooling.</p>
+            <div class="meta">
+              <span>EVM</span><span>Non-EVM</span><span>Cross-chain</span>
+            </div>
+          </div>
+          <div class="card">
+            <h3>Core frameworks</h3>
+            <p>EVM • Cosmos SDK • Substrate • modern web frameworks • cloud-native tooling.</p>
+            <div class="meta">
+              <span>Substrate</span><span>Cosmos SDK</span><span>Cloud-native</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
     <section id="services">
       <div class="wrap">
         <div class="sectionTitle">
           <div>
             <h2>Services</h2>
-            <p class="sub">Pick a lane, or let us own the full build.</p>
+            <p class="sub">Pick a lane—or let us own the full build from spec to production.</p>
           </div>
         </div>
 
@@ -325,9 +589,9 @@
           <div class="card">
             <h3>AI / automation</h3>
             <ul class="list">
-              <li>LLM agents for support, ops, sales, research</li>
-              <li>Knowledge bases, retrieval, and tooling</li>
-              <li>Cost-aware inference + evaluation loops</li>
+              <li>Agents for ops, support, research, and internal tools</li>
+              <li>Knowledge bases, retrieval, and evaluation loops</li>
+              <li>Cost-aware inference and performance tuning</li>
               <li>Integration with existing systems</li>
             </ul>
           </div>
@@ -335,6 +599,7 @@
       </div>
     </section>
 
+    <!-- APPROACH -->
     <section id="approach">
       <div class="wrap">
         <div class="sectionTitle">
@@ -347,26 +612,27 @@
         <div class="grid3">
           <div class="card">
             <h3>1) Define</h3>
-            <p>Clarify success metrics, constraints, and security boundaries. Align on scope and timelines.</p>
+            <p>Align on outcomes, constraints, security boundaries, scope, and timeline.</p>
           </div>
           <div class="card">
             <h3>2) Build</h3>
-            <p>Ship in small increments with automated tests, observability, and clean documentation.</p>
+            <p>Ship in small increments with tests, documentation, and measurable milestones.</p>
           </div>
           <div class="card">
             <h3>3) Scale</h3>
-            <p>Harden performance and reliability, optimize costs, and prepare for growth and funding.</p>
+            <p>Harden performance and reliability, optimize costs, and prepare for growth.</p>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- CONTACT -->
     <section id="contact">
       <div class="wrap">
         <div class="panel contact">
           <div>
             <h2 style="margin:0 0 6px;">Let’s build something useful.</h2>
-            <p class="sub" style="margin:0;">Replace the contact details below with your preferred email / links.</p>
+            <p class="sub" style="margin:0;">Tell us what you’re building—product, protocol, or growth partnership.</p>
           </div>
           <div class="heroActions" style="margin:0;">
             <a class="btn primary" href="mailto:hello@engrewlabs.com">Email: hello@engrewlabs.com</a>
