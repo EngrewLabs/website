@@ -1,10 +1,12 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Engrew Labs</title>
-  <meta name="description" content="Engrew Labs builds blockchain, AI, and web products—shipping sustainable systems from idea to production." />
+  <meta name="description"
+    content="Engrew Labs builds blockchain, AI, and web products—shipping sustainable systems from idea to production." />
   <meta property="og:title" content="Engrew Labs" />
   <meta property="og:description" content="Blockchain • AI • Web — practical products, built to last." />
   <meta property="og:image" content="assets/logo.png" />
@@ -14,223 +16,459 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-FXPQG26V5K"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag() {
+      dataLayer.push(arguments);
+    }
     gtag('js', new Date());
 
     gtag('config', 'G-FXPQG26V5K');
   </script>
 
   <style>
-    :root{
+    :root {
       --bg: #0b1020;
-      --card: rgba(255,255,255,.06);
-      --text: rgba(255,255,255,.92);
-      --muted: rgba(255,255,255,.70);
-      --line: rgba(255,255,255,.12);
-      --shadow: 0 18px 60px rgba(0,0,0,.45);
+      --card: rgba(255, 255, 255, 0.06);
+      --text: rgba(255, 255, 255, 0.92);
+      --muted: rgba(255, 255, 255, 0.7);
+      --line: rgba(255, 255, 255, 0.12);
+      --shadow: 0 18px 60px rgba(0, 0, 0, 0.45);
       --radius: 18px;
       --max: 1120px;
-      --good: rgba(88,255,205,.9);
-      --blue: rgba(71,126,255,.95);
-      --violet: rgba(167,88,255,.85);
+      --good: rgba(88, 255, 205, 0.9);
+      --blue: rgba(71, 126, 255, 0.95);
+      --violet: rgba(167, 88, 255, 0.85);
     }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-      color:var(--text);
-      background: var(--bg);
-      line-height:1.55;
+
+    * {
+      box-sizing: border-box;
     }
-    a{color:inherit; text-decoration:none}
-    .wrap{max-width:var(--max); margin:0 auto; padding: 0 20px;}
-    header{
-      position: sticky; top:0; z-index:50;
-      backdrop-filter: blur(10px);
-      background: linear-gradient(to bottom, rgba(11,16,32,.82), rgba(11,16,32,.40));
-      border-bottom: 1px solid rgba(255,255,255,.06);
+
+    html,
+    body {
+      height: 100%;
     }
-    .nav{
-      display:flex; align-items:center; justify-content:space-between;
-      padding:14px 0; gap:12px;
+
+    html {
+      scroll-behavior: smooth;
     }
-    .brand{display:flex; align-items:center; gap:12px; min-width: 240px;}
-    .brand img{
-      width:42px; height:42px; border-radius:12px;
-    }
-    .brand .name{display:flex; flex-direction:column; line-height:1.1;}
-    .brand .name strong{font-size:14px; letter-spacing:.2px}
-    .brand .name span{font-size:12px; color:var(--muted)}
-    nav ul{display:flex; list-style:none; margin:0; padding:0; gap: 8px; flex-wrap:wrap; justify-content:flex-end;}
-    nav a{font-size:13px; color:var(--muted); padding:8px 10px; border-radius:12px;}
-    nav a:hover{color:var(--text); background: rgba(255,255,255,.06);}
-    .cta{display:flex; gap:10px; align-items:center;}
-    .btn{
-      display:inline-flex; align-items:center; justify-content:center;
-      padding:10px 14px; border-radius: 14px;
-      border: 1px solid rgba(255,255,255,.14);
-      background: rgba(255,255,255,.06);
+
+    body {
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto,
+        Helvetica, Arial, 'Apple Color Emoji', 'Segoe UI Emoji';
       color: var(--text);
-      font-weight:600; font-size:13px;
-      transition: transform .12s ease, background .12s ease, border-color .12s ease, filter .12s ease;
-      white-space:nowrap;
+      background: var(--bg);
+      line-height: 1.55;
     }
-    .btn:hover{transform: translateY(-1px); background: rgba(255,255,255,.09); border-color: rgba(255,255,255,.22);}
-    .btn.primary{
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .wrap {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(10px);
+      background: linear-gradient(to bottom,
+          rgba(11, 16, 32, 0.82),
+          rgba(11, 16, 32, 0.4));
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 0;
+      gap: 12px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 240px;
+    }
+
+    .brand img {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+    }
+
+    .brand .name {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+    }
+
+    .brand .name strong {
+      font-size: 14px;
+      letter-spacing: 0.2px;
+    }
+
+    .brand .name span {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    nav a {
+      font-size: 13px;
+      color: var(--muted);
+      padding: 8px 10px;
+      border-radius: 12px;
+    }
+
+    nav a:hover {
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .cta {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 14px;
+      border-radius: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--text);
+      font-weight: 600;
+      font-size: 13px;
+      transition: transform 0.12s ease, background 0.12s ease,
+        border-color 0.12s ease, filter 0.12s ease;
+      white-space: nowrap;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      background: rgba(255, 255, 255, 0.09);
+      border-color: rgba(255, 255, 255, 0.22);
+    }
+
+    .btn.primary {
       border-color: transparent;
-      background: linear-gradient(135deg, rgba(71,126,255,.95), rgba(88,255,205,.90));
+      background: linear-gradient(135deg,
+          rgba(71, 126, 255, 0.95),
+          rgba(88, 255, 205, 0.9));
       color: #071022;
     }
-    .btn.primary:hover{filter: brightness(1.03);}
-    .hero{padding: 72px 0 34px;}
-    .heroGrid{
-      display:grid;
-      grid-template-columns: 1.15fr .85fr;
-      gap: 22px;
-      align-items:stretch;
+
+    .btn.primary:hover {
+      filter: brightness(1.03);
     }
-    .panel{
-      border: 1px solid rgba(255,255,255,.12);
-      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04));
+
+    .hero {
+      padding: 72px 0 34px;
+    }
+
+    .heroGrid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .panel {
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: linear-gradient(180deg,
+          rgba(255, 255, 255, 0.08),
+          rgba(255, 255, 255, 0.04));
       border-radius: var(--radius);
       box-shadow: var(--shadow);
-      overflow:hidden;
+      overflow: hidden;
     }
-    .heroCard{padding: 26px; position: relative;}
-    .kicker{
-      display:inline-flex; gap:10px; align-items:center;
+
+    .heroCard {
+      padding: 26px;
+      position: relative;
+    }
+
+    .kicker {
+      display: inline-flex;
+      gap: 10px;
+      align-items: center;
       padding: 7px 12px;
       border-radius: 999px;
-      border: 1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(255, 255, 255, 0.05);
       color: var(--muted);
-      font-size:12px;
+      font-size: 12px;
     }
-    h1{
+
+    h1 {
       margin: 14px 0 10px;
       font-size: clamp(30px, 4.2vw, 52px);
       letter-spacing: -0.8px;
       line-height: 1.05;
     }
-    .lead{
+
+    .lead {
       margin: 0 0 18px;
       color: var(--muted);
       font-size: 15px;
       max-width: 70ch;
     }
-    .heroActions{display:flex; gap:10px; flex-wrap:wrap; margin-top:18px;}
-    .stats{
-      display:grid; grid-template-columns: repeat(3, 1fr);
-      gap: 12px; margin-top: 18px;
+
+    .heroActions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 18px;
     }
-    .stat{
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .stat {
       padding: 14px;
       border-radius: 16px;
-      border: 1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.05);
     }
-    .stat strong{display:block; font-size:16px;}
-    .stat span{display:block; font-size:12px; color:var(--muted); margin-top:4px;}
-    .logoCard{
+
+    .stat strong {
+      display: block;
+      font-size: 16px;
+    }
+
+    .stat span {
+      display: block;
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    .logoCard {
       padding: 18px;
-      display:flex;
-      flex-direction:column;
-      justify-content:space-between;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
       gap: 14px;
     }
-    .logoBox{
+
+    .logoBox {
       border-radius: 16px;
-      border: 1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.04);
       padding: 18px;
-      display:flex; align-items:center; justify-content:center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       min-height: 220px;
     }
-    .logoBox img{max-width: 100%; height:auto;}
-    .pillRow{display:flex; flex-wrap:wrap; gap:8px;}
-    .pill{
-      font-size:12px; color: var(--muted);
+
+    .logoBox img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .pillRow {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .pill {
+      font-size: 12px;
+      color: var(--muted);
       padding: 7px 10px;
       border-radius: 999px;
-      border: 1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(255, 255, 255, 0.05);
     }
-    .badgeRow{display:flex; flex-wrap:wrap; gap:8px; margin-top: 10px;}
-    .badge{
-      font-size:11px;
+
+    .badgeRow {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .badge {
+      font-size: 11px;
       padding: 6px 9px;
       border-radius: 999px;
-      border: 1px solid rgba(255,255,255,.14);
-      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      background: rgba(255, 255, 255, 0.05);
       color: var(--muted);
     }
-    .badge.core{border-color: rgba(88,255,205,.35); color: rgba(205,255,240,.95);}
-    .badge.progress{border-color: rgba(71,126,255,.35); color: rgba(210,225,255,.95);}
-    .badge.investor{border-color: rgba(167,88,255,.35); color: rgba(235,215,255,.95);}
 
-    section{padding: 34px 0;}
-    .sectionTitle{
-      display:flex; align-items:flex-end; justify-content:space-between; gap:14px;
+    .badge.core {
+      border-color: rgba(88, 255, 205, 0.35);
+      color: rgba(205, 255, 240, 0.95);
+    }
+
+    .badge.progress {
+      border-color: rgba(71, 126, 255, 0.35);
+      color: rgba(210, 225, 255, 0.95);
+    }
+
+    .badge.investor {
+      border-color: rgba(167, 88, 255, 0.35);
+      color: rgba(235, 215, 255, 0.95);
+    }
+
+    section {
+      padding: 34px 0;
+    }
+
+    .sectionTitle {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 14px;
       margin-bottom: 16px;
     }
-    h2{margin:0; font-size: 20px; letter-spacing:-.2px;}
-    .sub{margin:0; color:var(--muted); font-size: 13px;}
-    .grid3{
-      display:grid;
+
+    h2 {
+      margin: 0;
+      font-size: 20px;
+      letter-spacing: -0.2px;
+    }
+
+    .sub {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .grid3 {
+      display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 14px;
     }
-    .grid2{
-      display:grid;
+
+    .grid2 {
+      display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 14px;
     }
-    .card{
+
+    .card {
       padding: 16px;
       border-radius: 18px;
-      border: 1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.05);
     }
-    .card h3{margin: 2px 0 6px; font-size: 14px;}
-    .card p{margin:0; color:var(--muted); font-size: 13px;}
-    .split{
-      display:grid; grid-template-columns: 1fr 1fr; gap: 14px;
+
+    .card h3 {
+      margin: 2px 0 6px;
+      font-size: 14px;
     }
-    .list{margin: 8px 0 0; padding-left: 18px; color:var(--muted); font-size:13px;}
-    .list li{margin: 6px 0;}
-    .meta{
-      display:flex; gap:10px; flex-wrap:wrap;
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .list {
+      margin: 8px 0 0;
+      padding-left: 18px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .list li {
+      margin: 6px 0;
+    }
+
+    .meta {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
       margin-top: 10px;
       color: var(--muted);
       font-size: 12px;
     }
-    .meta span{
-      border: 1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.04);
+
+    .meta span {
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.04);
       padding: 6px 9px;
       border-radius: 999px;
     }
 
-    .contact{
-      display:flex; align-items:center; justify-content:space-between; gap: 14px;
+    .contact {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
       padding: 18px;
     }
-    footer{
+
+    footer {
       padding: 26px 0 40px;
-      color: rgba(255,255,255,.55);
-      font-size:12px;
-      border-top: 1px solid rgba(255,255,255,.08);
+      color: rgba(255, 255, 255, 0.55);
+      font-size: 12px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
       margin-top: 10px;
     }
 
-    @media (max-width: 900px){
-      .heroGrid{grid-template-columns: 1fr;}
-      .grid3{grid-template-columns: 1fr;}
-      .grid2{grid-template-columns: 1fr;}
-      .split{grid-template-columns: 1fr;}
-      .brand{min-width:unset}
-      nav{display:none}
+    @media (max-width: 900px) {
+      .heroGrid {
+        grid-template-columns: 1fr;
+      }
+
+      .grid3 {
+        grid-template-columns: 1fr;
+      }
+
+      .grid2 {
+        grid-template-columns: 1fr;
+      }
+
+      .split {
+        grid-template-columns: 1fr;
+      }
+
+      .brand {
+        min-width: unset;
+      }
+
+      nav {
+        display: none;
+      }
+
+      .panel.contact {
+        flex-direction: column;
+        align-items: flex-start;
+      }
     }
   </style>
 </head>
@@ -251,6 +489,7 @@
             <li><a href="#products">Products</a></li>
             <li><a href="#services">What we do</a></li>
             <li><a href="#contact">Contact</a></li>
+            <li><a href="#careers">We're hiring</a></li>
           </ul>
         </nav>
         <div class="cta">
@@ -270,7 +509,11 @@
             <div class="kicker">⚙️ Built for the long run</div>
             <h1>We build sustainable products that ship.</h1>
             <p class="lead">
-              EngrewLabs is a software development company specializing in blockchain and AI, delivering scalable, production-secure <strong>in-house products</strong> and <strong>custom solutions for external clients</strong>—spanning infrastructure, smart contracts, and AI agents.
+              EngrewLabs is a software development company specializing in
+              blockchain and AI, delivering scalable, production-secure
+              <strong>in-house products</strong> and
+              <strong>custom solutions for external clients</strong>—spanning
+              infrastructure, smart contracts, and AI agents.
             </p>
 
             <div class="heroActions">
@@ -281,7 +524,8 @@
             <div class="stats" aria-label="Highlights">
               <div class="stat">
                 <strong>Balanced Team</strong>
-                <span>Experienced leads, proven mid-level engineers, and continuously learning juniors</span>
+                <span>Experienced leads, proven mid-level engineers, and
+                  continuously learning juniors</span>
               </div>
               <div class="stat">
                 <strong>End-to-end</strong>
@@ -307,8 +551,9 @@
                 <div class="pill">Simple UX</div>
                 <div class="pill">Production-first</div>
               </div>
-              <p class="sub" style="margin-top:12px;">
-                We combine engineering, design, DevOps, and growth to deliver complete products—not just code.
+              <p class="sub" style="margin-top: 12px">
+                We combine engineering, design, DevOps, and growth to deliver
+                complete products—not just code.
               </p>
             </div>
           </div>
@@ -322,7 +567,10 @@
         <div class="sectionTitle">
           <div>
             <h2>Products</h2>
-            <p class="sub">Core products + in-progress initiatives currently being shaped for launch and investment.</p>
+            <p class="sub">
+              Core products + in-progress initiatives currently being shaped
+              for launch and investment.
+            </p>
           </div>
         </div>
 
@@ -332,15 +580,18 @@
               HyperUI — Hyperliquid Trading Terminal &nbsp;
               <a href="https://hyperui.engrewlabs.org" target="_blank" rel="noopener noreferrer">
                 <svg class="ext-link__icon" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M14 3h7v7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                  <path d="M10 14L21 3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                  <path d="M21 14v6a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h6"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M14 3h7v7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                  <path d="M10 14L21 3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                  <path d="M21 14v6a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h6" fill="none" stroke="currentColor"
+                    stroke-width="2" stroke-linecap="round" />
                 </svg>
               </a>
             </h3>
             <p>
-              A one-page interface that aggregates essential Hyperliquid trading signals, positions, and market data—optimized for speed and clarity—while shipping community-driven and customer-suggested features through a fast feedback loop.
+              A one-page interface that aggregates essential Hyperliquid
+              trading signals, positions, and market data—optimized for speed
+              and clarity—while shipping community-driven and
+              customer-suggested features through a fast feedback loop.
             </p>
             <div class="badgeRow">
               <span class="badge core">Core product</span>
@@ -356,8 +607,10 @@
           <div class="card">
             <h3>Engrew Development Agency</h3>
             <p>
-              A long-running delivery engine to source projects and ship them with experienced teams across blockchain,
-              AI, and full-stack engineering—built to stay valuable regardless of job market cycles.
+              A long-running delivery engine to source projects and ship them
+              with experienced teams across blockchain, AI, and full-stack
+              engineering—built to stay valuable regardless of job market
+              cycles.
             </p>
             <div class="badgeRow">
               <span class="badge core">Core product</span>
@@ -373,8 +626,9 @@
           <div class="card">
             <h3>OpenBroker Protocol</h3>
             <p>
-              On-chain intent + off-chain (or cross-chain) execution by service providers (“brokers”).
-              First broker: a Binance broker to execute Binance trading using on-chain intent.
+              On-chain intent + off-chain (or cross-chain) execution by
+              service providers (“brokers”). First broker: a Binance broker to
+              execute Binance trading using on-chain intent.
             </p>
             <div class="badgeRow">
               <span class="badge core">Core product</span>
@@ -390,8 +644,9 @@
           <div class="card">
             <h3>YAR — Mental Healthcare AI Agent</h3>
             <p>
-              A supportive AI agent for sharing personal situations, reducing stress, and helping users work through
-              problems in a private, conversational flow.
+              A supportive AI agent for sharing personal situations, reducing
+              stress, and helping users work through problems in a private,
+              conversational flow.
             </p>
             <div class="badgeRow">
               <span class="badge core">Core product</span>
@@ -407,8 +662,10 @@
           <div class="card">
             <h3>MindClash — AI Society</h3>
             <p>
-              A research-driven “AI society” to test whether agents can form relationships, collaborate,
-              and evolve coordination like humans—positioned for investor storytelling before full build-out.
+              A research-driven “AI society” to test whether agents can form
+              relationships, collaborate, and evolve coordination like
+              humans—positioned for investor storytelling before full
+              build-out.
             </p>
             <div class="badgeRow">
               <span class="badge progress">In progress</span>
@@ -424,8 +681,9 @@
           <div class="card">
             <h3>More in progress</h3>
             <p>
-              We continuously explore new product lines and partnerships. If you’re an investor or partner,
-              we can share a private roadmap and demo links under NDA.
+              We continuously explore new product lines and partnerships. If
+              you’re an investor or partner, we can share a private roadmap
+              and demo links under NDA.
             </p>
             <div class="badgeRow">
               <span class="badge progress">In progress</span>
@@ -447,7 +705,10 @@
         <div class="sectionTitle">
           <div>
             <h2>Services</h2>
-            <p class="sub">Pick a lane—or let us own the full build from spec to production.</p>
+            <p class="sub">
+              Pick a lane—or let us own the full build from spec to
+              production.
+            </p>
           </div>
         </div>
 
@@ -486,7 +747,10 @@
         <div class="grid3">
           <div class="card">
             <h3>Blockchain + Smart Contracts</h3>
-            <p>Protocol builds, integrations, tokenomics, and audit-ready contracts.</p>
+            <p>
+              Protocol builds, integrations, tokenomics, and audit-ready
+              contracts.
+            </p>
             <div class="meta">
               <span>Solidity</span><span>EVM</span><span>Cosmos SDK</span><span>Substrate</span>
             </div>
@@ -494,7 +758,10 @@
 
           <div class="card">
             <h3>AI Agents + Automation</h3>
-            <p>Agents, retrieval, eval loops, and workflow automation tied to your product.</p>
+            <p>
+              Agents, retrieval, eval loops, and workflow automation tied to
+              your product.
+            </p>
             <div class="meta">
               <span>Python</span><span>TypeScript</span><span>RAG</span><span>Evaluation</span>
             </div>
@@ -502,7 +769,10 @@
 
           <div class="card">
             <h3>Product Engineering + DevOps</h3>
-            <p>Production web apps, APIs, CI/CD, monitoring, and reliable deployments.</p>
+            <p>
+              Production web apps, APIs, CI/CD, monitoring, and reliable
+              deployments.
+            </p>
             <div class="meta">
               <span>Go</span><span>React</span><span>CI/CD</span><span>Cloud-native</span>
             </div>
@@ -523,47 +793,100 @@
         <div class="grid3">
           <div class="card">
             <h3>1) Define</h3>
-            <p>Align on outcomes, constraints, security boundaries, scope, and timeline.</p>
+            <p>
+              Align on outcomes, constraints, security boundaries, scope, and
+              timeline.
+            </p>
           </div>
           <div class="card">
             <h3>2) Build</h3>
-            <p>Ship in small increments with tests, documentation, and measurable milestones.</p>
+            <p>
+              Ship in small increments with tests, documentation, and
+              measurable milestones.
+            </p>
           </div>
           <div class="card">
             <h3>3) Scale</h3>
-            <p>Harden performance and reliability, optimize costs, and prepare for growth.</p>
+            <p>
+              Harden performance and reliability, optimize costs, and prepare
+              for growth.
+            </p>
           </div>
         </div>
       </div>
+    </section>
+
+    <section id="careers">
+      <div class="wrap">
+        <div class="sectionTitle">
+          <div>
+            <h2>Careers</h2>
+          </div>
+        </div>
+        <div class="grid1">
+          <div class="card">
+            <ul class="list">
+              <li><a target="_blank"
+                  href="https://engrewlabs.notion.site/Tech-Recruiter-2f170756ad1480a782f3f0a985be3b1a">
+                  Tech Recruiter</a></li>
+              <li><a target="_blank"
+                  href="https://engrewlabs.notion.site/Sales-Growth-Lead-AI-Products-31e70756ad148039b17cce645111b800?pvs=73">
+                  Sales Growth Lead AI Products</a></li>
+              <li><a target="_blank"
+                  href="https://engrewlabs.notion.site/AI-Automation-Integrations-Engineer-31e70756ad1480d08ac2cc73b5b14c2c?pvs=73">
+                  AI Automation Integrations Engineer</a></li>
+              <li><a target="_blank"
+                  href="https://engrewlabs.notion.site/Full-Stack-Engineer-31e70756ad1480bc9124eefeb9a1e747?pvs=73">
+                  Full Stack Engineer</a></li>
+              <li><a target="_blank"
+                  href="https://engrewlabs.notion.site/AI-ML-Engineer-31e70756ad14807c8377eb1e9a9f5f5f?pvs=74">
+                  AI ML Engineer</a>
+              </li>
+            </ul>
+          </div>
+        </div>
     </section>
 
     <section id="contact">
       <div class="wrap">
         <div class="panel contact">
           <div>
-            <h2 style="margin:0 0 6px;">Let’s build something useful.</h2>
-            <p class="sub" style="margin:0;">Tell us what you’re building—product, protocol, or growth partnership.</p>
+            <h2 style="margin: 0 0 6px">Let’s build something useful.</h2>
+            <p class="sub" style="margin: 0">
+              Tell us what you’re building—product, protocol, or growth
+              partnership.
+            </p>
           </div>
-          <div class="heroActions" style="margin:0;">
-            <a class="btn primary" href="mailto:contactus@engrewlabs.org">Email: contactus@engrewlabs.org</a>
-            <a class="btn" href="#" onclick="copyText('contactus@engrewlabs.org');return false;">Copy email</a>
+          <div class="heroActions" style="margin: 0">
+            <a class="btn primary" href="mailto:contactus@engrewlabs.org">Contact us</a>
+            <!-- <a
+                class="btn"
+                href="#"
+                onclick="copyText('contactus@engrewlabs.org');return false;"
+                >Copy email</a
+              > -->
+            <a class="btn" href="https://x.com/EngrewLabs" target="_blank">
+              <img src="./assets/x-logo.svg" width="16" />
+            </a>
           </div>
         </div>
-
-        <footer>
-          <div class="wrap" style="padding:0;">
-            © <span id="year"></span> Engrew Labs. All rights reserved.
-          </div>
-        </footer>
       </div>
     </section>
   </main>
-
+  <footer>
+    <div class="wrap" style="padding: 0">
+      © <span id="year"></span> Engrew Labs. All rights reserved.
+    </div>
+  </footer>
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
-    function copyText(t){
-      navigator.clipboard.writeText(t).then(()=>alert('Copied: ' + t)).catch(()=>prompt('Copy:', t));
+    function copyText(t) {
+      navigator.clipboard
+        .writeText(t)
+        .then(() => alert('Copied: ' + t))
+        .catch(() => prompt('Copy:', t));
     }
   </script>
 </body>
+
 </html>
