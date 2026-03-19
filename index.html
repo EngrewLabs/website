@@ -72,6 +72,15 @@
       padding: 0 20px;
     }
 
+    #backgroundCanvas {
+      position: fixed;
+      top:0; left:0;
+      width:100%; height:100%;
+      z-index:0;
+      opacity:0.12;
+      pointer-events:none;
+    }
+
     header {
       position: sticky;
       top: 0;
@@ -482,6 +491,7 @@
 </head>
 
 <body>
+  <canvas id="backgroundCanvas"></canvas>
   <header>
     <div class="wrap">
       <div class="nav">
@@ -1083,6 +1093,214 @@
         .then(() => alert('Copied: ' + t))
         .catch(() => prompt('Copy:', t));
     }
+    // canvas
+    const canvas = document.getElementById("backgroundCanvas");
+    const ctx = canvas.getContext("2d");
+
+    function resize(){
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    window.addEventListener("resize", resize);
+    resize();
+
+    // --------------------
+    // MOUSE
+    // --------------------
+    let mouse = { x: null, y: null };
+    let lastMove = Date.now();
+
+    window.addEventListener("mousemove", (e) => {
+      mouse.x = e.clientX;
+      mouse.y = e.clientY;
+      lastMove = Date.now();
+    });
+
+    function getMouseActivity() {
+      return (Date.now() - lastMove < 120) ? 1 : 0.25;
+    }
+
+    // --------------------
+    // NODES
+    // --------------------
+    let nodes = [];
+    const NODE_COUNT = 120; // increased density
+
+    function init(){
+      nodes=[];
+      for(let i=0;i<NODE_COUNT;i++){
+        nodes.push({
+          x:Math.random()*canvas.width,
+          y:Math.random()*canvas.height,
+          vx:(Math.random()-0.5)*0.12,
+          vy:(Math.random()-0.5)*0.12
+        });
+      }
+    }
+    init();
+
+    // --------------------
+    // SCROLL STAGES
+    // --------------------
+    function getProgress(){
+      return window.scrollY/(document.body.scrollHeight-window.innerHeight);
+    }
+    function getStage(p){
+      if(p<0.25) return 0;
+      if(p<0.5) return 1;
+      if(p<0.75) return 2;
+      return 3;
+    }
+
+    // --------------------
+    // DRAW
+    // --------------------
+    const MOUSE_RADIUS = 140;
+
+    function draw(){
+      ctx.clearRect(0,0,canvas.width,canvas.height);
+
+      const progress = getProgress();
+      const stage = getStage(progress);
+      const activity = getMouseActivity();
+
+      // --------------------
+      // CURSOR HALO (visibility boost)
+      // --------------------
+      if (mouse.x !== null) {
+        const gradient = ctx.createRadialGradient(
+          mouse.x, mouse.y, 0,
+          mouse.x, mouse.y, MOUSE_RADIUS
+        );
+
+        gradient.addColorStop(0, "rgba(88,255,205,0.12)");
+        gradient.addColorStop(1, "rgba(88,255,205,0)");
+
+        ctx.fillStyle = gradient;
+        ctx.beginPath();
+        ctx.arc(mouse.x, mouse.y, MOUSE_RADIUS, 0, Math.PI * 2);
+        ctx.fill();
+      }
+
+      // --------------------
+      // UPDATE NODES
+      // --------------------
+      nodes.forEach(n=>{
+        let dxm = mouse.x - n.x;
+        let dym = mouse.y - n.y;
+        let distMouse = Math.sqrt(dxm*dxm + dym*dym);
+
+        let influence = 0;
+
+        if(mouse.x !== null && distMouse < MOUSE_RADIUS){
+          influence = (1 - distMouse / MOUSE_RADIUS) * activity;
+
+          // stronger attraction (but still controlled)
+          n.x += dxm * 0.02 * influence;
+          n.y += dym * 0.02 * influence;
+        }
+
+        // stage behaviors (slowed + subtle)
+        if(stage===0){
+          n.x += n.vx;
+          n.y += n.vy;
+        }
+
+        if(stage===1){
+          n.x += (canvas.width/2 - n.x) * 0.002;
+          n.y += (canvas.height/2 - n.y) * 0.002;
+        }
+
+        if(stage===2){
+          n.x += 0.25;
+          if(n.x > canvas.width) n.x = 0;
+        }
+
+        if(stage===3){
+          n.x += (canvas.width/2 - n.x) * 0.001;
+          n.y += (canvas.height/2 - n.y) * 0.001;
+        }
+      });
+
+      // --------------------
+      // DRAW CONNECTIONS
+      // --------------------
+      for(let i=0;i<nodes.length;i++){
+        for(let j=i+1;j<nodes.length;j++){
+
+          let dx = nodes[i].x - nodes[j].x;
+          let dy = nodes[i].y - nodes[j].y;
+          let dist = Math.sqrt(dx*dx + dy*dy);
+
+          let maxDist = stage===0 ? 75 : stage===1 ? 120 : 95;
+
+          // boost near mouse
+          if(mouse.x !== null){
+            let dxm = mouse.x - nodes[i].x;
+            let dym = mouse.y - nodes[i].y;
+            let dm = Math.sqrt(dxm*dxm + dym*dym);
+
+            if(dm < MOUSE_RADIUS){
+              maxDist += 50 * activity;
+            }
+          }
+
+          if(dist < maxDist){
+
+            let alpha = 0.35 * (1 - dist/maxDist);
+
+            // extra brightness near cursor
+            if(mouse.x !== null){
+              let dxm = mouse.x - nodes[i].x;
+              let dym = mouse.y - nodes[i].y;
+              let dm = Math.sqrt(dxm*dxm + dym*dym);
+
+              if(dm < MOUSE_RADIUS){
+                alpha += 0.5 * (1 - dm / MOUSE_RADIUS);
+              }
+            }
+
+            ctx.strokeStyle = `rgba(88,255,205,${alpha})`;
+            ctx.beginPath();
+            ctx.moveTo(nodes[i].x,nodes[i].y);
+            ctx.lineTo(nodes[j].x,nodes[j].y);
+            ctx.stroke();
+          }
+        }
+      }
+
+      // --------------------
+      // DRAW NODES
+      // --------------------
+      nodes.forEach(n=>{
+        let size = 2;
+        let glow = 0;
+
+        if(mouse.x !== null){
+          let dx = mouse.x - n.x;
+          let dy = mouse.y - n.y;
+          let dist = Math.sqrt(dx*dx + dy*dy);
+
+          if(dist < MOUSE_RADIUS){
+            let factor = (1 - dist / MOUSE_RADIUS) * activity;
+            size = 2 + 2 * factor;
+            glow = 6 * factor;
+          }
+        }
+
+        ctx.shadowBlur = glow;
+        ctx.shadowColor = "#58ffcd";
+
+        ctx.beginPath();
+        ctx.arc(n.x, n.y, size, 0, Math.PI*2);
+        ctx.fillStyle = "#58ffcd";
+        ctx.fill();
+      });
+
+      requestAnimationFrame(draw);
+    }
+
+    draw();
   </script>
 </body>
 
