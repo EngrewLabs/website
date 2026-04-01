@@ -74,11 +74,13 @@
 
     #backgroundCanvas {
       position: fixed;
-      top:0; left:0;
-      width:100%; height:100%;
-      z-index:0;
-      opacity:0.12;
-      pointer-events:none;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      opacity: 0.12;
+      pointer-events: none;
     }
 
     header {
@@ -358,7 +360,7 @@
     }
 
     .impact {
-      margin-top: 12px; 
+      margin-top: 12px;
       font-size: 0.95rem;
       font-weight: 500;
       color: #1a1a1a;
@@ -400,6 +402,20 @@
     .card h3 {
       margin: 2px 0 6px;
       font-size: 14px;
+    }
+
+    .card .image-container {
+      width: 100%;
+      aspect-ratio: 8 / 5;
+      /* 2:1 ratio */
+      overflow: hidden;
+    }
+
+    .card .image-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      /* or 'contain' */
     }
 
     .card p {
@@ -527,9 +543,11 @@
             <div class="kicker">⚙️ Built for the long run</div>
             <h1>We build sustainable products that ship.</h1>
             <p class="lead">
-              EngrewLabs is a product-focused software company building AI-driven systems and scalable infrastructure. We deliver production-ready
+              EngrewLabs is a product-focused software company building AI-driven systems and scalable infrastructure.
+              We deliver production-ready
               <strong>in-house products</strong> and
-              <strong>custom solutions for external clients</strong>—spanning automation, AI agents, and blockchain systems where they add real value.
+              <strong>custom solutions for external clients</strong>—spanning automation, AI agents, and blockchain
+              systems where they add real value.
             </p>
 
             <div class="heroActions">
@@ -567,7 +585,8 @@
                 <div class="pill">Automation-first</div>
               </div>
               <p class="sub" style="margin-top: 12px">
-                We combine human expertise and AI agents across engineering, design, and DevOps to deliver complete, production-ready products—not just code.
+                We combine human expertise and AI agents across engineering, design, and DevOps to deliver complete,
+                production-ready products—not just code.
               </p>
             </div>
           </div>
@@ -601,6 +620,9 @@
                 </svg>
               </a>
             </h3>
+            <div class="image-container">
+              <image src="./assets/products/1.png" />
+            </div>
             <p>
               An AI-powered visualization platform that enables users to preview tiles,
               flooring, and interior designs in real spaces—helping homeowners,
@@ -630,6 +652,9 @@
                 </svg>
               </a>
             </h3>
+            <div class="image-container">
+              <image src="./assets/products/2.png" />
+            </div>
             <p>
               A production-grade OCR platform designed for converting complex scientific content
               into structured, editable formats. Mathpix enables instant extraction of equations,
@@ -653,6 +678,9 @@
             <h3>
               Automated AI Marketing & Lead Generation
             </h3>
+            <div class="image-container">
+              <image src="./assets/products/3.png" />
+            </div>
             <p>
               An AI-powered system that automates lead research, personalized outreach,
               and campaign optimization. It combines multi-source data scraping, LLM-driven content
@@ -683,6 +711,9 @@
                 </svg>
               </a>
             </h3>
+            <div class="image-container">
+              <image src="./assets/products/4.png" />
+            </div>
             <p>
               A one-page interface that aggregates essential Hyperliquid
               trading signals, positions, and market data—optimized for speed
@@ -704,7 +735,9 @@
             <h3>
               GrewDesk — Internal Ops & Workflow Management Platform
             </h3>
-
+            <div class="image-container">
+              <image src="./assets/products/5.png" />
+            </div>
             <p>
               A centralized internal dashboard for managing end-to-end business operations—covering
               contact management, call scheduling, analytics (weekly, monthly, quarterly, yearly),
@@ -738,6 +771,9 @@
                 </svg>
               </a>
             </h3>
+            <div class="image-container">
+              <image src="./assets/products/6.png" />
+            </div>
             <p>
               An AI-native social platform that creates a personalized “AI identity” trained on your
               voice, memories, and behavior to represent you online. Second Me enables AI agents to
@@ -768,6 +804,9 @@
                 </svg>
               </a>
             </h3>
+            <div class="image-container">
+              <image src="./assets/products/7.png" />
+            </div>
             <p>
               An AI-powered text transformation platform designed to convert machine-generated
               content into natural, human-like writing. Clever Humanizer detects and rewrites
@@ -799,6 +838,9 @@
                 </svg>
               </a>
             </h3>
+            <div class="image-container">
+              <image src="./assets/products/8.png" />
+            </div>
             <p>
               A Claude Code plugin that provides reusable AI skills,
               agents, and automation workflows for software engineering. The system enables
@@ -821,6 +863,9 @@
             <h3>
               AI Stock Predictor — Intelligent Market Forecasting System
             </h3>
+            <div class="image-container">
+              <image src="./assets/products/9.png" />
+            </div>
             <p>
               An AI-powered stock price prediction system that analyzes historical market data,
               technical indicators, and real-time signals to forecast price movements. The platform
@@ -841,6 +886,9 @@
 
           <div class="card">
             <h3>DipSight — AI-Powered Chrome Extension</h3>
+            <div class="image-container">
+              <image src="./assets/products/10.png" />
+            </div>
             <p>
               An AI-guided browser extension designed to help users discover the right
               information faster. DipSight allows users to guide AI/LLM models to search,
@@ -860,6 +908,9 @@
 
           <div class="card">
             <h3>OpenBroker Protocol</h3>
+            <div class="image-container">
+              <image src="./assets/products/11.png" />
+            </div>
             <p>
               On-chain intent + off-chain (or cross-chain) execution by
               service providers (“brokers”). First broker: a Binance broker to
@@ -878,6 +929,9 @@
 
           <div class="card">
             <h3>YAR — Mental Healthcare AI Agent</h3>
+            <div class="image-container">
+              <image src="./assets/products/12.png" />
+            </div>
             <p>
               A supportive AI agent for sharing personal situations, reducing
               stress, and helping users work through problems in a private,
@@ -896,6 +950,9 @@
 
           <div class="card">
             <h3>MindClash — Multi-Agent System</h3>
+            <div class="image-container">
+              <image src="./assets/products/13.png" />
+            </div>
             <p>
               A research-driven multi-agent simulation environment for studying
               coordination, memory sharing, and emergent behaviors across autonomous agents.
@@ -915,7 +972,9 @@
             <h3>
               Open Contributions — AI/ML, Blockchain & Developer SDKs
             </h3>
-
+            <div class="image-container">
+              <image src="./assets/products/14.png" />
+            </div>
             <p>
               Significant contributions to production-grade open source projects across AI/ML frameworks,
               blockchain infrastructure, and widely-used coding SDKs. Competed in the Bittensor Affine subnet
@@ -940,6 +999,9 @@
 
           <div class="card">
             <h3>More in progress</h3>
+            <div class="image-container">
+              <image src="./assets/products/15.png" />
+            </div>
             <p>
               We continuously explore new product lines and partnerships. If
               you’re an investor or partner, we can share a private roadmap
@@ -966,7 +1028,8 @@
           <div>
             <h2>Services</h2>
             <p class="sub">
-              We deliver end-to-end products—AI-augmented, blockchain-secure, and full-stack web applications—designed to ship fast and scale reliably.
+              We deliver end-to-end products—AI-augmented, blockchain-secure, and full-stack web applications—designed
+              to ship fast and scale reliably.
             </p>
           </div>
         </div>
@@ -1013,7 +1076,8 @@
               <li>MVP → full-featured product lifecycle support</li>
               <li>CI/CD pipelines, monitoring, and performance optimization</li>
             </ul>
-            <p class="impact">From prototypes to enterprise-grade products, we ensure reliable delivery and smooth scaling.</p>
+            <p class="impact">From prototypes to enterprise-grade products, we ensure reliable delivery and smooth
+              scaling.</p>
           </div>
         </div>
       </div>
@@ -1025,7 +1089,8 @@
           <div>
             <h2>Expertise</h2>
             <p class="sub">
-              What we build — and the stack we ship with. Human + AI teams delivering reliable, scalable, and secure products.
+              What we build — and the stack we ship with. Human + AI teams delivering reliable, scalable, and secure
+              products.
             </p>
           </div>
         </div>
@@ -1034,7 +1099,8 @@
           <div class="card">
             <h3>AI Agents + Automation</h3>
             <p>
-              Agents, retrieval loops, evaluation workflows, and automation pipelines integrated as part of your product—AI as an active team member.
+              Agents, retrieval loops, evaluation workflows, and automation pipelines integrated as part of your
+              product—AI as an active team member.
             </p>
             <div class="meta">
               <span>LangChain</span>
@@ -1057,7 +1123,8 @@
           <div class="card">
             <h3>Blockchain & Distributed Systems</h3>
             <p>
-              Protocol design, smart contracts, tokenomics, and secure infrastructure—all audit-ready and production-focused.
+              Protocol design, smart contracts, tokenomics, and secure infrastructure—all audit-ready and
+              production-focused.
             </p>
             <div class="meta">
               <span>Solidity / EVM</span><span>JavaScript</span>
@@ -1074,7 +1141,8 @@
           <div class="card">
             <h3>Product Engineering + DevOps</h3>
             <p>
-              Web, desktop, and mobile applications, APIs, CI/CD pipelines, monitoring, and cloud-native deployments built for high reliability and scale.
+              Web, desktop, and mobile applications, APIs, CI/CD pipelines, monitoring, and cloud-native deployments
+              built for high reliability and scale.
             </p>
             <div class="meta">
               <span>Node.js</span><span>AWS</span><span>Docker</span><span>Kubernetes</span>
@@ -1101,21 +1169,24 @@
           <div class="card">
             <h3>Define</h3>
             <p>
-              Align on outcomes, constraints, security boundaries, and scope. AI agents assist in analyzing options, risks, and opportunities.
+              Align on outcomes, constraints, security boundaries, and scope. AI agents assist in analyzing options,
+              risks, and opportunities.
             </p>
           </div>
 
           <div class="card">
             <h3>Build</h3>
             <p>
-              Ship in small, measurable increments with automated tests, documentation, and AI-assisted coding and evaluation.
+              Ship in small, measurable increments with automated tests, documentation, and AI-assisted coding and
+              evaluation.
             </p>
           </div>
 
           <div class="card">
             <h3>Scale</h3>
             <p>
-              Harden performance, optimize costs, and prepare for growth. AI monitoring and feedback loops help detect issues and optimize resources.
+              Harden performance, optimize costs, and prepare for growth. AI monitoring and feedback loops help detect
+              issues and optimize resources.
             </p>
           </div>
         </div>
@@ -1128,30 +1199,16 @@
           <div>
             <h2>Careers</h2>
             <p class="sub">
-              Our team is built on great communicators, fast learners, and people who take initiative and care deeply about the work they do.
+              Our team is built on great communicators, fast learners, and people who take initiative and care deeply
+              about the work they do.
             </p>
           </div>
         </div>
         <div class="grid3">
           <div class="card">
             <h3>
-              <a target="_blank"
-                  href="https://engrewlabs.notion.site/Tech-Recruiter-2f170756ad1480a782f3f0a985be3b1a">
-                  Tech Recruiter &nbsp; 
-                  <svg class="ext-link__icon" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M14 3h7v7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-                    <path d="M10 14L21 3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-                    <path d="M21 14v6a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h6" fill="none" stroke="currentColor"
-                      stroke-width="2" stroke-linecap="round" />
-                  </svg>
-              </a>
-            </h3>
-          </div>
-          <div class="card">
-            <h3>
-              <a target="_blank"
-                href="https://engrewlabs.notion.site/Sales-Growth-Lead-AI-Products-31e70756ad148039b17cce645111b800?pvs=73">
-                Sales Growth Lead AI Products &nbsp; 
+              <a target="_blank" href="https://engrewlabs.notion.site/Tech-Recruiter-2f170756ad1480a782f3f0a985be3b1a">
+                Tech Recruiter &nbsp;
                 <svg class="ext-link__icon" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M14 3h7v7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
                   <path d="M10 14L21 3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
@@ -1164,14 +1221,28 @@
           <div class="card">
             <h3>
               <a target="_blank"
-                 href="https://engrewlabs.notion.site/AI-Automation-Integrations-Engineer-31e70756ad1480d08ac2cc73b5b14c2c?pvs=73">
-                  AI Automation Integrations Engineer &nbsp; 
-                  <svg class="ext-link__icon" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M14 3h7v7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-                    <path d="M10 14L21 3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-                    <path d="M21 14v6a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h6" fill="none" stroke="currentColor"
-                      stroke-width="2" stroke-linecap="round" />
-                  </svg>
+                href="https://engrewlabs.notion.site/Sales-Growth-Lead-AI-Products-31e70756ad148039b17cce645111b800?pvs=73">
+                Sales Growth Lead AI Products &nbsp;
+                <svg class="ext-link__icon" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M14 3h7v7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                  <path d="M10 14L21 3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                  <path d="M21 14v6a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h6" fill="none" stroke="currentColor"
+                    stroke-width="2" stroke-linecap="round" />
+                </svg>
+              </a>
+            </h3>
+          </div>
+          <div class="card">
+            <h3>
+              <a target="_blank"
+                href="https://engrewlabs.notion.site/AI-Automation-Integrations-Engineer-31e70756ad1480d08ac2cc73b5b14c2c?pvs=73">
+                AI Automation Integrations Engineer &nbsp;
+                <svg class="ext-link__icon" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M14 3h7v7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                  <path d="M10 14L21 3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                  <path d="M21 14v6a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h6" fill="none" stroke="currentColor"
+                    stroke-width="2" stroke-linecap="round" />
+                </svg>
               </a>
             </h3>
           </div>
@@ -1179,7 +1250,7 @@
             <h3>
               <a target="_blank"
                 href="https://engrewlabs.notion.site/Full-Stack-Engineer-31e70756ad1480bc9124eefeb9a1e747?pvs=73">
-                Full Stack Engineer &nbsp; 
+                Full Stack Engineer &nbsp;
                 <svg class="ext-link__icon" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M14 3h7v7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
                   <path d="M10 14L21 3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
@@ -1193,7 +1264,7 @@
             <h3>
               <a target="_blank"
                 href="https://engrewlabs.notion.site/AI-ML-Engineer-31e70756ad14807c8377eb1e9a9f5f5f?pvs=74">
-                AI ML Engineer &nbsp; 
+                AI ML Engineer &nbsp;
                 <svg class="ext-link__icon" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M14 3h7v7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
                   <path d="M10 14L21 3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
@@ -1252,7 +1323,7 @@
     const canvas = document.getElementById("backgroundCanvas");
     const ctx = canvas.getContext("2d");
 
-    function resize(){
+    function resize() {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
     }
@@ -1281,14 +1352,14 @@
     let nodes = [];
     const NODE_COUNT = 120; // increased density
 
-    function init(){
-      nodes=[];
-      for(let i=0;i<NODE_COUNT;i++){
+    function init() {
+      nodes = [];
+      for (let i = 0; i < NODE_COUNT; i++) {
         nodes.push({
-          x:Math.random()*canvas.width,
-          y:Math.random()*canvas.height,
-          vx:(Math.random()-0.5)*0.12,
-          vy:(Math.random()-0.5)*0.12
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          vx: (Math.random() - 0.5) * 0.12,
+          vy: (Math.random() - 0.5) * 0.12
         });
       }
     }
@@ -1297,13 +1368,13 @@
     // --------------------
     // SCROLL STAGES
     // --------------------
-    function getProgress(){
-      return window.scrollY/(document.body.scrollHeight-window.innerHeight);
+    function getProgress() {
+      return window.scrollY / (document.body.scrollHeight - window.innerHeight);
     }
-    function getStage(p){
-      if(p<0.25) return 0;
-      if(p<0.5) return 1;
-      if(p<0.75) return 2;
+    function getStage(p) {
+      if (p < 0.25) return 0;
+      if (p < 0.5) return 1;
+      if (p < 0.75) return 2;
       return 3;
     }
 
@@ -1312,8 +1383,8 @@
     // --------------------
     const MOUSE_RADIUS = 140;
 
-    function draw(){
-      ctx.clearRect(0,0,canvas.width,canvas.height);
+    function draw() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       const progress = getProgress();
       const stage = getStage(progress);
@@ -1340,14 +1411,14 @@
       // --------------------
       // UPDATE NODES
       // --------------------
-      nodes.forEach(n=>{
+      nodes.forEach(n => {
         let dxm = mouse.x - n.x;
         let dym = mouse.y - n.y;
-        let distMouse = Math.sqrt(dxm*dxm + dym*dym);
+        let distMouse = Math.sqrt(dxm * dxm + dym * dym);
 
         let influence = 0;
 
-        if(mouse.x !== null && distMouse < MOUSE_RADIUS){
+        if (mouse.x !== null && distMouse < MOUSE_RADIUS) {
           influence = (1 - distMouse / MOUSE_RADIUS) * activity;
 
           // stronger attraction (but still controlled)
@@ -1356,69 +1427,69 @@
         }
 
         // stage behaviors (slowed + subtle)
-        if(stage===0){
+        if (stage === 0) {
           n.x += n.vx;
           n.y += n.vy;
         }
 
-        if(stage===1){
-          n.x += (canvas.width/2 - n.x) * 0.002;
-          n.y += (canvas.height/2 - n.y) * 0.002;
+        if (stage === 1) {
+          n.x += (canvas.width / 2 - n.x) * 0.002;
+          n.y += (canvas.height / 2 - n.y) * 0.002;
         }
 
-        if(stage===2){
+        if (stage === 2) {
           n.x += 0.25;
-          if(n.x > canvas.width) n.x = 0;
+          if (n.x > canvas.width) n.x = 0;
         }
 
-        if(stage===3){
-          n.x += (canvas.width/2 - n.x) * 0.001;
-          n.y += (canvas.height/2 - n.y) * 0.001;
+        if (stage === 3) {
+          n.x += (canvas.width / 2 - n.x) * 0.001;
+          n.y += (canvas.height / 2 - n.y) * 0.001;
         }
       });
 
       // --------------------
       // DRAW CONNECTIONS
       // --------------------
-      for(let i=0;i<nodes.length;i++){
-        for(let j=i+1;j<nodes.length;j++){
+      for (let i = 0; i < nodes.length; i++) {
+        for (let j = i + 1; j < nodes.length; j++) {
 
           let dx = nodes[i].x - nodes[j].x;
           let dy = nodes[i].y - nodes[j].y;
-          let dist = Math.sqrt(dx*dx + dy*dy);
+          let dist = Math.sqrt(dx * dx + dy * dy);
 
-          let maxDist = stage===0 ? 75 : stage===1 ? 120 : 95;
+          let maxDist = stage === 0 ? 75 : stage === 1 ? 120 : 95;
 
           // boost near mouse
-          if(mouse.x !== null){
+          if (mouse.x !== null) {
             let dxm = mouse.x - nodes[i].x;
             let dym = mouse.y - nodes[i].y;
-            let dm = Math.sqrt(dxm*dxm + dym*dym);
+            let dm = Math.sqrt(dxm * dxm + dym * dym);
 
-            if(dm < MOUSE_RADIUS){
+            if (dm < MOUSE_RADIUS) {
               maxDist += 50 * activity;
             }
           }
 
-          if(dist < maxDist){
+          if (dist < maxDist) {
 
-            let alpha = 0.35 * (1 - dist/maxDist);
+            let alpha = 0.35 * (1 - dist / maxDist);
 
             // extra brightness near cursor
-            if(mouse.x !== null){
+            if (mouse.x !== null) {
               let dxm = mouse.x - nodes[i].x;
               let dym = mouse.y - nodes[i].y;
-              let dm = Math.sqrt(dxm*dxm + dym*dym);
+              let dm = Math.sqrt(dxm * dxm + dym * dym);
 
-              if(dm < MOUSE_RADIUS){
+              if (dm < MOUSE_RADIUS) {
                 alpha += 0.5 * (1 - dm / MOUSE_RADIUS);
               }
             }
 
             ctx.strokeStyle = `rgba(88,255,205,${alpha})`;
             ctx.beginPath();
-            ctx.moveTo(nodes[i].x,nodes[i].y);
-            ctx.lineTo(nodes[j].x,nodes[j].y);
+            ctx.moveTo(nodes[i].x, nodes[i].y);
+            ctx.lineTo(nodes[j].x, nodes[j].y);
             ctx.stroke();
           }
         }
@@ -1427,16 +1498,16 @@
       // --------------------
       // DRAW NODES
       // --------------------
-      nodes.forEach(n=>{
+      nodes.forEach(n => {
         let size = 2;
         let glow = 0;
 
-        if(mouse.x !== null){
+        if (mouse.x !== null) {
           let dx = mouse.x - n.x;
           let dy = mouse.y - n.y;
-          let dist = Math.sqrt(dx*dx + dy*dy);
+          let dist = Math.sqrt(dx * dx + dy * dy);
 
-          if(dist < MOUSE_RADIUS){
+          if (dist < MOUSE_RADIUS) {
             let factor = (1 - dist / MOUSE_RADIUS) * activity;
             size = 2 + 2 * factor;
             glow = 6 * factor;
@@ -1447,7 +1518,7 @@
         ctx.shadowColor = "#58ffcd";
 
         ctx.beginPath();
-        ctx.arc(n.x, n.y, size, 0, Math.PI*2);
+        ctx.arc(n.x, n.y, size, 0, Math.PI * 2);
         ctx.fillStyle = "#58ffcd";
         ctx.fill();
       });
