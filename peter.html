@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Peter Wang, Technical Recruiter | Engrew Labs</title>
+  <meta name="description"
+    content="Peter Wang, Technical Recruiter working across global markets (American, European, Asian). 5+ years of full-cycle recruitment across technology and SaaS." />
+  <meta property="og:title" content="Peter Wang, Technical Recruiter" />
+  <meta property="og:description" content="Full-cycle technical recruiter for technology and SaaS across global markets: American, European, Asian." />
+  <meta property="og:image" content="assets/profiles/peter.png" />
+  <link rel="canonical" href="/peter.html" />
+  <link rel="icon" href="assets/logo32x32.png" />
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FXPQG26V5K"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'G-FXPQG26V5K');
+  </script>
+
+  <style>
+    :root {
+      --bg: #0b1020;
+      --card: rgba(255, 255, 255, 0.06);
+      --text: rgba(255, 255, 255, 0.92);
+      --muted: rgba(255, 255, 255, 0.7);
+      --line: rgba(255, 255, 255, 0.12);
+      --shadow: 0 18px 60px rgba(0, 0, 0, 0.45);
+      --radius: 18px;
+      --max: 1120px;
+      --accent: rgb(0, 216, 204);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto,
+        Helvetica, Arial, 'Apple Color Emoji', 'Segoe UI Emoji';
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.55;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .wrap {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(10px);
+      background: linear-gradient(to bottom,
+          rgba(11, 16, 32, 0.82),
+          rgba(11, 16, 32, 0.4));
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 0;
+      gap: 12px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand img {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+    }
+
+    .brand .name {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+    }
+
+    .brand .name strong {
+      font-size: 18px;
+      letter-spacing: 0.2px;
+      margin-bottom: 3px;
+    }
+
+    .brand .name span {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    nav a {
+      font-size: 13px;
+      color: var(--muted);
+      padding: 8px 10px;
+      border-radius: 12px;
+    }
+
+    nav a:hover {
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    main {
+      padding: 40px 0 20px;
+    }
+
+    /* Hero */
+    .hero {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .panel {
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: linear-gradient(180deg,
+          rgba(255, 255, 255, 0.08),
+          rgba(255, 255, 255, 0.04));
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .photoCard {
+      padding: 0;
+      position: relative;
+      min-height: 320px;
+    }
+
+    .photoCard img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .introCard {
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .kicker {
+      display: inline-flex;
+      gap: 10px;
+      align-items: center;
+      padding: 7px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--muted);
+      font-size: 12px;
+      width: fit-content;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 10px var(--accent);
+    }
+
+    h1 {
+      margin: 14px 0 6px;
+      font-size: clamp(30px, 4.2vw, 46px);
+      letter-spacing: -0.8px;
+      line-height: 1.05;
+    }
+
+    .role {
+      margin: 0 0 6px;
+      font-size: 17px;
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .location {
+      margin: 0 0 16px;
+      color: var(--muted);
+      font-size: 13px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .lead {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+      max-width: 62ch;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .stat {
+      padding: 14px;
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 22px;
+      letter-spacing: -0.5px;
+    }
+
+    .stat span {
+      display: block;
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    section {
+      padding: 34px 0 0;
+    }
+
+    .sectionTitle {
+      margin-bottom: 16px;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: 20px;
+      letter-spacing: -0.2px;
+    }
+
+    .sub {
+      margin: 4px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* Experience timeline */
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .job {
+      padding: 20px 22px;
+      border-radius: 18px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.05);
+      border-left: 3px solid var(--accent);
+    }
+
+    .jobHead {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .job h3 {
+      margin: 0;
+      font-size: 16px;
+    }
+
+    .job .company {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .job .period {
+      color: var(--muted);
+      font-size: 12px;
+      white-space: nowrap;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.04);
+      padding: 4px 10px;
+      border-radius: 999px;
+    }
+
+    .job ul {
+      margin: 12px 0 0;
+      padding-left: 18px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .job li {
+      margin: 7px 0;
+    }
+
+    /* Two-column layout for skills + education */
+    .split {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 14px;
+      align-items: start;
+    }
+
+    .card {
+      padding: 22px;
+      border-radius: 18px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .card h3 {
+      margin: 0 0 14px;
+      font-size: 15px;
+    }
+
+    .skillGroup {
+      margin: 0 0 16px;
+    }
+
+    .skillGroup:last-child {
+      margin-bottom: 0;
+    }
+
+    .skillGroup .label {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+
+    .pillRow {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .pill {
+      font-size: 12px;
+      color: var(--muted);
+      padding: 7px 11px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .eduItem {
+      margin-bottom: 16px;
+    }
+
+    .eduItem:last-child {
+      margin-bottom: 0;
+    }
+
+    .eduItem .school {
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .eduItem .degree {
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    .eduItem .period {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    .certList {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .certList li {
+      margin: 6px 0;
+    }
+
+    /* Recruiting toolkit */
+    .toolGrid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .card.tool {
+      border-top: 3px solid var(--accent);
+    }
+
+    .toolIcon {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .card.tool h3 {
+      margin: 0 0 8px;
+      font-size: 16px;
+    }
+
+    .card.tool p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .card.tool .compare {
+      display: inline-block;
+      margin-top: 12px;
+      font-size: 12px;
+      color: var(--muted);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(255, 255, 255, 0.05);
+      padding: 5px 10px;
+      border-radius: 999px;
+      transition: color 0.12s ease, border-color 0.12s ease, background 0.12s ease;
+    }
+
+    .card.tool a.compare:hover {
+      color: var(--text);
+      border-color: rgba(0, 216, 204, 0.5);
+      background: rgba(0, 216, 204, 0.08);
+    }
+
+    footer {
+      padding: 26px 0 40px;
+      color: rgba(255, 255, 255, 0.55);
+      font-size: 12px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      margin-top: 40px;
+    }
+
+    footer a {
+      color: rgba(255, 255, 255, 0.55);
+      margin-left: 12px;
+    }
+
+    footer a:hover {
+      color: var(--text);
+    }
+
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .photoCard {
+        min-height: 260px;
+      }
+
+      .stats {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .split {
+        grid-template-columns: 1fr;
+      }
+
+      .toolGrid {
+        grid-template-columns: 1fr;
+      }
+
+      nav {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="wrap">
+      <div class="nav">
+        <a class="brand" href="/" aria-label="EngrewLabs Home">
+          <img src="assets/logo64x64.png" alt="EngrewLabs Logo" />
+          <div class="name">
+            <strong>Engrew Labs</strong>
+            <span>AI Systems • Automation • Scalable Infrastructure</span>
+          </div>
+        </a>
+        <nav aria-label="Primary">
+          <ul>
+            <li><a href="/#products">Products</a></li>
+            <li><a href="/#services">What we do</a></li>
+            <li><a href="/#contact">Contact</a></li>
+            <li><a href="/#careers">We're hiring</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap">
+
+      <!-- Hero -->
+      <section class="hero" style="padding-top: 0;">
+        <div class="panel photoCard">
+          <img src="assets/profiles/peter.png" alt="Portrait of Peter Wang" />
+        </div>
+        <div class="panel introCard">
+          <span class="kicker"><span class="dot"></span> Technical Recruiter</span>
+          <h1>Peter Wang</h1>
+          <p class="role">Technical Recruiter</p>
+          <p class="location">📍 Global markets: American, European, Asian</p>
+          <p class="lead">
+            Results-oriented technical recruiter with over 5 years of experience across global markets, including
+            American, European, and Asian, specializing in full-cycle recruitment for the technology and SaaS
+            sectors. Proven track record of sourcing and placing top-tier talent for high-growth startups and
+            established enterprises, building strong candidate pipelines, managing stakeholders, and implementing
+            efficient hiring processes that reduce time-to-fill and improve quality of hire.
+          </p>
+          <div class="stats">
+            <div class="stat">
+              <strong>5+</strong>
+              <span>Years experience</span>
+            </div>
+            <div class="stat">
+              <strong>50+</strong>
+              <span>Roles filled</span>
+            </div>
+            <div class="stat">
+              <strong>2</strong>
+              <span>Languages</span>
+            </div>
+            <div class="stat">
+              <strong>15%</strong>
+              <span>Faster time-to-hire</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Experience -->
+      <section>
+        <div class="sectionTitle">
+          <h2>Professional Experience</h2>
+          <p class="sub">Full-cycle recruitment across technology, SaaS, and high-growth startups.</p>
+        </div>
+        <div class="timeline">
+          <div class="job">
+            <div class="jobHead">
+              <h3>Senior Recruiter at <span class="company">Wing Hing Hardware and Tools Limited</span></h3>
+              <span class="period">Aug 2025 to Present · Hong Kong</span>
+            </div>
+            <ul>
+              <li>Led full-cycle recruitment for technical and operational roles, including supply chain,
+                engineering, and sales positions across the organization.</li>
+              <li>Partnered with department heads to forecast hiring needs and develop strategic workforce plans.</li>
+              <li>Redesigned the candidate onboarding process, improving new-hire retention by 20% within the first
+                90 days.</li>
+              <li>Managed the end-to-end offer process, including salary negotiations and market benchmarking to
+                ensure competitive offers.</li>
+            </ul>
+          </div>
+
+          <div class="job">
+            <div class="jobHead">
+              <h3>Recruiter at <span class="company">SleekFlow</span></h3>
+              <span class="period">Jan 2022 to Apr 2025 · Hong Kong</span>
+            </div>
+            <ul>
+              <li>Managed the entire talent acquisition lifecycle for a high-growth B2B SaaS company, filling over
+                50 technical and business roles (Sales, Product, Engineering, and Customer Success).</li>
+              <li>Developed and executed innovative sourcing strategies using LinkedIn Recruiter, job boards, and
+                employee referrals to build a robust talent pipeline.</li>
+              <li>Served as a strategic partner to hiring managers, advising on market trends, interview
+                techniques, and compensation benchmarks.</li>
+              <li>Implemented a new applicant tracking system (ATS) workflow that reduced average time-to-hire by
+                15%.</li>
+            </ul>
+          </div>
+
+          <div class="job">
+            <div class="jobHead">
+              <h3>Recruiting Specialist at <span class="company">Ecomflow</span></h3>
+              <span class="period">Aug 2020 to Dec 2021 · Hong Kong</span>
+            </div>
+            <ul>
+              <li>Spearheaded recruitment for a fast-paced e-commerce logistics startup, supporting rapid team
+                growth from 20 to 50 employees.</li>
+              <li>Conducted initial candidate screenings, coordinated interviews, and managed the offer and close
+                process for all open requisitions.</li>
+              <li>Collaborated with the HR team to create standardized job descriptions and interview scorecards
+                for a consistent candidate experience.</li>
+              <li>Organized and attended career fairs and networking events to build brand awareness and attract
+                talent.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills + Education -->
+      <section>
+        <div class="split">
+          <div class="card">
+            <h3>Key Skills</h3>
+
+            <div class="skillGroup">
+              <div class="label">Full-Cycle Recruitment</div>
+              <div class="pillRow">
+                <span class="pill">Sourcing</span>
+                <span class="pill">Screening</span>
+                <span class="pill">Interviewing</span>
+                <span class="pill">Closing</span>
+              </div>
+            </div>
+
+            <div class="skillGroup">
+              <div class="label">Talent Sourcing</div>
+              <div class="pillRow">
+                <span class="pill">LinkedIn Recruiter</span>
+                <span class="pill">Boolean Search</span>
+                <span class="pill">Direct Sourcing</span>
+              </div>
+            </div>
+
+            <div class="skillGroup">
+              <div class="label">Applicant Tracking Systems (ATS) &amp; Job Sites</div>
+              <div class="pillRow">
+                <span class="pill">Workable</span>
+                <span class="pill">Lever</span>
+                <span class="pill">BambooHR</span>
+                <span class="pill">LinkedIn</span>
+                <span class="pill">Greenhouse</span>
+                <span class="pill">Dice</span>
+                <span class="pill">Ashby</span>
+                <span class="pill">JobDiva</span>
+                <span class="pill">Workday</span>
+                <span class="pill">Rippling</span>
+                <span class="pill">ApplyToJob</span>
+                <span class="pill">SmartRecruiters</span>
+                <span class="pill">Paylocity</span>
+                <span class="pill">Indeed</span>
+                <span class="pill">Oracle</span>
+                <span class="pill">ADP</span>
+                <span class="pill">Dayforce</span>
+                <span class="pill">UKG</span>
+                <span class="pill">Gem</span>
+                <span class="pill">ZipRecruiter</span>
+                <span class="pill">Jobvite</span>
+                <span class="pill">Paycom</span>
+                <span class="pill">Paycor</span>
+                <span class="pill">Comeet</span>
+                <span class="pill">Hirebridge</span>
+              </div>
+            </div>
+
+            <div class="skillGroup">
+              <div class="label">Strategy &amp; Assessment</div>
+              <div class="pillRow">
+                <span class="pill">Stakeholder &amp; Hiring Manager Management</span>
+                <span class="pill">Competency-Based Interviewing</span>
+                <span class="pill">Market Mapping</span>
+                <span class="pill">Compensation Benchmarking (Global)</span>
+                <span class="pill">Employer Branding</span>
+                <span class="pill">Candidate Experience</span>
+              </div>
+            </div>
+
+            <div class="skillGroup">
+              <div class="label">Languages</div>
+              <div class="pillRow">
+                <span class="pill">English</span>
+                <span class="pill">Cantonese</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>Education</h3>
+            <div class="eduItem">
+              <div class="school">Hong Kong University of Science and Technology (HKUST)</div>
+              <div class="degree">BEng/BSc in Marketing</div>
+              <div class="period">Feb 2016 to May 2020 · Hong Kong</div>
+            </div>
+
+            <h3 style="margin-top: 24px;">Certifications</h3>
+            <ul class="certList">
+              <li>LinkedIn Recruiter Certification</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Recruiting toolkit -->
+      <section>
+        <div class="sectionTitle">
+          <h2>Recruiting Toolkit</h2>
+          <p class="sub">Purpose-built tools I bring to every search for more matches, stronger candidates, and better
+            interviews.</p>
+        </div>
+        <div class="toolGrid">
+          <div class="card tool">
+            <div class="toolIcon">📄</div>
+            <h3>Resume Tailor Engine</h3>
+            <p>Tailors every resume to score a higher match against each specific job description, so candidates
+              surface for far more roles, helping us make many more connections with company opportunities.</p>
+            <a class="compare" href="https://jobright.ai/" target="_blank" rel="noopener">In the spirit of
+              jobright.ai ↗</a>
+          </div>
+          <div class="card tool">
+            <div class="toolIcon">🎤</div>
+            <h3>Interview Support</h3>
+            <p>A real-time interview support tool that helps you confidently handle interviews with the hiring
+              managers and recruiters you meet at target companies.</p>
+            <a class="compare" href="https://www.lockedinai.com/" target="_blank" rel="noopener">In the spirit of
+              lockedinai.com ↗</a>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      © <span id="year"></span> Engrew Labs. All rights reserved.
+      <a href="/privacy.html">Privacy Policy</a>
+    </div>
+  </footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+
+</html>
